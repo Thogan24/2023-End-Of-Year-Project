@@ -9,9 +9,10 @@ public class PlayerStats : MonoBehaviour
     public int currencyAmount;
     public Text healthText;
     public Text currencyText;
+    public bool regen = false;
+    float Timer = 1f;
 
-
-    void Start()
+    void Awake()
     {
         playerHealth = 100;
         currencyAmount = 0;
@@ -22,11 +23,25 @@ public class PlayerStats : MonoBehaviour
     {
         healthText.text = playerHealth.ToString();
         currencyText.text = currencyAmount.ToString();
+        if (regen == true)
+        {
+            Timer -= Time.deltaTime;
+                if (Timer <= 0f && playerHealth < 100)
+                {
+                    playerHealth++;
+                    Timer = 1f;
+                }
+        }
     }
 
-    void PlayerTakeDamage(int damage)
+    public void PlayerTakeDamage(int damage)
     {
         playerHealth -= damage;
         // URP camera effects
+    }
+
+    public void Regeneration()
+    {
+        regen = true;
     }
 }
