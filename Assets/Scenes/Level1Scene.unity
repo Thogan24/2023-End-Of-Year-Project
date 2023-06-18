@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,11 +156,11 @@ RectTransform:
   m_Father: {fileID: 1464337163}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -205.22, y: 174.92}
-  m_SizeDelta: {x: 161.5542, y: 48.6507}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 114.0029, y: 10.245331}
+  m_SizeDelta: {x: 161.5542, y: 48.650696}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &66884789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,11 +333,11 @@ RectTransform:
   m_Father: {fileID: 1464337163}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -336, y: 174.92}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 14, y: 35.919983}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &662399890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,11 +503,11 @@ RectTransform:
   m_Father: {fileID: 1464337163}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 354, y: 174.92}
-  m_SizeDelta: {x: 161.5542, y: 48.6507}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 34.7771, y: 10.245361}
+  m_SizeDelta: {x: 161.5542, y: 48.650696}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &812730022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,6 +629,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -702,6 +703,20 @@ Transform:
   m_Father: {fileID: 1763287806}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d9b2737ff43fc468062cf0f57f1a3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 250
+  playerBody: {fileID: 1763287806}
 --- !u!1 &1464337159
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,7 +948,6 @@ GameObject:
   - component: {fileID: 1763287804}
   - component: {fileID: 1763287802}
   - component: {fileID: 1763287807}
-  - component: {fileID: 1763287808}
   - component: {fileID: 1763287809}
   m_Layer: 0
   m_Name: Capsule
@@ -1042,20 +1056,6 @@ MonoBehaviour:
   controller: {fileID: 1763287802}
   speed: 30
   gravity: -9.81
---- !u!114 &1763287808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763287801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d9b2737ff43fc468062cf0f57f1a3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseSensitivity: 250
-  playerBody: {fileID: 1763287806}
 --- !u!136 &1763287809
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1103,11 +1103,11 @@ RectTransform:
   m_Father: {fileID: 1464337163}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 213.22, y: 174.92}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -126.78, y: 45.92}
   m_SizeDelta: {x: 120, y: 120}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1874237369
 MonoBehaviour:
   m_ObjectHideFlags: 0
