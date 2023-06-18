@@ -10,7 +10,11 @@ public class PlayerStats : MonoBehaviour
     public Text healthText;
     public Text currencyText;
     public bool regen = false;
-    float Timer = 1f;
+    public bool passiveIncome = false;
+    float timer = 1f;
+    float passiveIncomeTimer = 1f;
+    public GameObject notEnoughCoinsText;
+    float timerNotEnoughCoinsText = 0f;
 
     void Awake()
     {
@@ -25,13 +29,35 @@ public class PlayerStats : MonoBehaviour
         currencyText.text = currencyAmount.ToString();
         if (regen == true)
         {
-            Timer -= Time.deltaTime;
-                if (Timer <= 0f && playerHealth < 100)
+            timer -= Time.deltaTime;
+                if (timer <= 0f && playerHealth < 100)
                 {
                     playerHealth++;
-                    Timer = 1f;
+                    timer = 1f;
                 }
         }
+        if (passiveIncome == true)
+        {
+            passiveIncomeTimer -= Time.deltaTime;
+            if (passiveIncomeTimer <= 0f)
+            {
+                currencyAmount++;
+                passiveIncomeTimer = 5f;
+            }
+        }
+
+
+
+        if (timerNotEnoughCoinsText > 0f)
+        {
+            notEnoughCoinsText.SetActive(true);
+            timerNotEnoughCoinsText -= Time.deltaTime;
+        }
+        else
+        {
+            notEnoughCoinsText.SetActive(false);
+        }
+
     }
 
     public void PlayerTakeDamage(int damage)
@@ -42,6 +68,29 @@ public class PlayerStats : MonoBehaviour
 
     public void Regeneration()
     {
-        regen = true;
+        if (currencyAmount >= 100)
+        {
+            regen = true;
+            currencyAmount -= 100;
+        }
+        else
+        {
+            timerNotEnoughCoinsText = 2f;
+        }
     }
+    public void PassiveIncome()
+    {
+        if (currencyAmount >= 100)
+        {
+            passiveIncome = true;
+            currencyAmount -= 100;
+        }
+        else
+        {
+            timerNotEnoughCoinsText = 2f;
+        }
+    }
+
+
+
 }
