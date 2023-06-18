@@ -15,6 +15,7 @@ public class PlayerStats : MonoBehaviour
     float passiveIncomeTimer = 1f;
     public GameObject notEnoughCoinsText;
     float timerNotEnoughCoinsText = 0f;
+    public GameObject gunObject;
 
     void Awake()
     {
@@ -89,6 +90,25 @@ public class PlayerStats : MonoBehaviour
         {
             timerNotEnoughCoinsText = 2f;
         }
+    }
+
+    public void FasterFireRate()
+    {
+        if (currencyAmount >= 500f)
+        {
+            Gun gun = gunObject.GetComponent<Gun>();
+            gun.cooldownTime = 0.1f;
+            currencyAmount -= 500;
+        }
+        else
+        {
+            timerNotEnoughCoinsText = 2f;
+        }
+    }
+
+    public void SprintAbility()
+    {
+
     }
 
 

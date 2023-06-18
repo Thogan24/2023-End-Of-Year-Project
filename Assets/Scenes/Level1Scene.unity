@@ -790,7 +790,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1763287810}
         m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: Regeneration
+        m_MethodName: FasterFireRate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -924,7 +924,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1763287810}
         m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: Regeneration
+        m_MethodName: PassiveIncome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2599,7 +2599,9 @@ MonoBehaviour:
   healthText: {fileID: 66884789}
   currencyText: {fileID: 812730022}
   regen: 0
+  passiveIncome: 0
   notEnoughCoinsText: {fileID: 0}
+  gunObject: {fileID: 0}
 --- !u!1 &1503830622 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2181743766629440291, guid: 369a44a1962a16449835e86fe2d6cd11, type: 3}
@@ -2943,7 +2945,9 @@ MonoBehaviour:
   healthText: {fileID: 66884789}
   currencyText: {fileID: 812730022}
   regen: 0
+  passiveIncome: 0
   notEnoughCoinsText: {fileID: 1301710223}
+  gunObject: {fileID: 572500524}
 --- !u!1 &1764577766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3291,7 +3295,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1763287810}
         m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: Regeneration
+        m_MethodName: SprintAbility
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
