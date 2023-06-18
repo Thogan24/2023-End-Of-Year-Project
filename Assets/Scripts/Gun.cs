@@ -8,10 +8,12 @@ public class Gun : MonoBehaviour
     public Camera fpsCam;
     public Vector3 hitRecoilPoint;
 
+
     [Header("Variables")]
     public float damage = 10f;
     public float range = 100f;
     public bool cooldown = true;
+    public float cooldownTime = 0.2f;
     public bool recoilCooldown = true;
     public float time = 0f;
     public bool isShooting = false;
@@ -33,12 +35,12 @@ public class Gun : MonoBehaviour
             shootingTime += Time.deltaTime;
         }
 
-        if (time > 0.1f)
+        if (time > cooldownTime)
         {
             cooldown = false;
         }
 
-        if (time > 0.2f)
+        if (time > cooldownTime + 0.05f)
         {
             recoilCooldown = false;
             shootingTime = 0f;
@@ -84,7 +86,9 @@ public class Gun : MonoBehaviour
             Enemy enemy = hit.transform.GetComponent<Enemy>();
             if (enemy != null)
             {                
-                enemy.TakeDamage(5f);                
+                enemy.TakeDamage(5f);
+                PlayerStats playerstats = player.GetComponent<PlayerStats>();
+                playerstats.currencyAmount += 5;
             }
 
         }

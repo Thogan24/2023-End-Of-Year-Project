@@ -10,17 +10,23 @@ public class PlayerStats : MonoBehaviour
     public Text healthText;
     public Text currencyText;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         playerHealth = 100;
         currencyAmount = 0;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         healthText.text = playerHealth.ToString();
         currencyText.text = currencyAmount.ToString();
+    }
+
+    void PlayerTakeDamage(int damage)
+    {
+        playerHealth -= damage;
+        // URP camera effects
     }
 }
