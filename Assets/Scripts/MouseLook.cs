@@ -19,7 +19,7 @@ public class MouseLook : MonoBehaviour
 
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-        Debug.Log(Input.GetAxis("Mouse X"));
+        //Debug.Log(Input.GetAxis("Mouse X"));
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f); // Makes it so that the user cannot look up / down beyond a certain point

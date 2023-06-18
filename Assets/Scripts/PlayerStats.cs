@@ -15,7 +15,9 @@ public class PlayerStats : MonoBehaviour
     float passiveIncomeTimer = 1f;
     public GameObject notEnoughCoinsText;
     float timerNotEnoughCoinsText = 0f;
+    public GameObject player;
     public GameObject gunObject;
+    public bool canSprint = false;
 
     void Awake()
     {
@@ -58,6 +60,22 @@ public class PlayerStats : MonoBehaviour
         {
             notEnoughCoinsText.SetActive(false);
         }
+
+
+
+        if (canSprint)
+        {
+            if ((Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift)))
+            {
+                Debug.Log("YEAH");
+                player.GetComponent<PlayerMovement>().applySprint();
+            }
+            else
+            {
+                player.GetComponent<PlayerMovement>().removeSprint();
+            }
+        }
+
 
     }
 
@@ -108,7 +126,17 @@ public class PlayerStats : MonoBehaviour
 
     public void SprintAbility()
     {
-
+        Debug.Log("AA");
+        if (currencyAmount >= 500f)
+        {
+            canSprint = true;
+            currencyAmount -= 500;
+        }
+        else
+        {
+            timerNotEnoughCoinsText = 2f;
+        }
+        
     }
 
 
