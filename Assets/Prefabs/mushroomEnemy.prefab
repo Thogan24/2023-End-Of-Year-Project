@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 0
   nmAgent: {fileID: 0}
-  player: {fileID: 3426198419310965726, guid: ce7d3268d8a534d4e8ac56d392f7b3c2, type: 3}
+  player: {fileID: 0}
 --- !u!195 &3909353826222763474
 NavMeshAgent:
   m_ObjectHideFlags: 0
