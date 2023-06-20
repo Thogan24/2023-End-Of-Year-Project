@@ -46,24 +46,24 @@ MonoBehaviour:
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 1, y: 46.00002}
+    value: {x: 1, y: 46.00003}
   minLuminance:
     overrideState: 1
-    value: 0
+    value: 0.2
   maxLuminance:
     overrideState: 1
-    value: 0
+    value: 1.6
   keyValue:
     overrideState: 0
     value: 1
   eyeAdaptation:
-    overrideState: 0
+    overrideState: 1
     value: 0
   speedUp:
-    overrideState: 1
+    overrideState: 0
     value: 2
   speedDown:
-    overrideState: 1
+    overrideState: 0
     value: 1
 --- !u!114 &-645334954498084747
 MonoBehaviour:
@@ -175,10 +175,10 @@ MonoBehaviour:
     value: 65472
   diffusion:
     overrideState: 1
-    value: 9.19
+    value: 8.75
   anamorphicRatio:
     overrideState: 1
-    value: 0.85
+    value: 0.71
   color:
     overrideState: 1
     value: {r: 1, g: 1, b: 1, a: 1}
@@ -222,7 +222,7 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   toneCurveToeLength:
-    overrideState: 1
+    overrideState: 0
     value: 1
   toneCurveShoulderStrength:
     overrideState: 1
