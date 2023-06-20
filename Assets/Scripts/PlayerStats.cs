@@ -23,6 +23,7 @@ public class PlayerStats : MonoBehaviour
 
     void Awake()
     {
+        player = GameObject.Find("Player");
         playerHealth = 100;
         currencyAmount = 0;
         skyboxRGB = camera.GetComponent<SkyboxRGB>();

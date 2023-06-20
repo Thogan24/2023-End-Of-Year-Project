@@ -8,13 +8,13 @@ public class Enemy : MonoBehaviour
     public float enemyHealth;
     public NavMeshAgent nmAgent;
     public GameObject player;
+    public float damageAmount = 10f;
+
     void Awake()
     {
-        enemyHealth = 100;
-        nmAgent = this.gameObject.GetComponent<NavMeshAgent>();
-        Debug.Log("a");
-        Debug.Log(this.gameObject.transform.parent.gameObject);
-        player = this.gameObject.transform.parent.GetChild(1).gameObject;
+        enemyHealth = 25;
+        nmAgent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -22,13 +22,29 @@ public class Enemy : MonoBehaviour
     {
         if (enemyHealth <= 0)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
+
         nmAgent.destination = player.transform.position;
+
     }
 
-    public void TakeDamage(float Damage)
+    void OnTriggerEnter(Collider other)
     {
-        enemyHealth -= Damage;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Collision with the player detected.");
+        }
+    }
+
+    private void DamagePlayer()
+    {
+        Debug.Log("b");
+        
+    }
+
+    public void TakeDamage(float damage)
+    {
+        enemyHealth -= damage;
     }
 }
