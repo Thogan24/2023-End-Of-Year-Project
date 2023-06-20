@@ -301,9 +301,6 @@ MonoBehaviour:
   Prefabs:
   - {fileID: 7482392503624979382, guid: 5526733584bfa0846848c979a8f3e414, type: 3}
   Timer: 0
-  enemyCount: 0
-  minSpawnTime: 5
-  maxSpawnTime: 10
   randomRotation: {x: 0, y: 0, z: 0}
   OffsetX: 0
   OffsetY: 0
@@ -1197,7 +1194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 32, y: 15.000015}
+  m_AnchoredPosition: {x: 32, y: 15.0000305}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &662399890
@@ -2022,7 +2019,7 @@ MonoBehaviour:
   sharedProfile: {fileID: 11400000, guid: cfea265c2a094d4468a77763de44c2e8, type: 2}
   isGlobal: 1
   blendDistance: 0
-  weight: 1
+  weight: 0.499
   priority: 0
 --- !u!4 &1260733731
 Transform:
@@ -2722,7 +2719,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3426198419310965285, guid: ce7d3268d8a534d4e8ac56d392f7b3c2, type: 3}
   m_PrefabInstance: {fileID: 3426198418892083495}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2115728088}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 020fda5e6867f034099c5bd60a88630e, type: 3}
@@ -3142,6 +3139,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -153830957423991239, guid: 369a44a1962a16449835e86fe2d6cd11, type: 3}
+--- !u!1 &2115728088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3426198419310965726, guid: ce7d3268d8a534d4e8ac56d392f7b3c2, type: 3}
+  m_PrefabInstance: {fileID: 3426198418892083495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2115728094
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115728088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2117862014
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,6 +3301,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 274613210}
     m_Modifications:
+    - target: {fileID: 3426198419310965285, guid: ce7d3268d8a534d4e8ac56d392f7b3c2, type: 3}
+      propertyPath: collider1
+      value: 
+      objectReference: {fileID: 2115728094}
     - target: {fileID: 3426198419310965285, guid: ce7d3268d8a534d4e8ac56d392f7b3c2, type: 3}
       propertyPath: healthText
       value: 

@@ -4,9 +4,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] Transform[] transforms;
     [SerializeField] GameObject[] Prefabs;
-    [SerializeField] float Timer = 15f;
-    [SerializeField] float minSpawnTime = 4f;
-    [SerializeField] float maxSpawnTime = 6f;
+    [SerializeField] float Timer = 0;
     [SerializeField] Vector3 randomRotation;
     [SerializeField] float OffsetX;
     [SerializeField] float OffsetY;
@@ -24,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
                 InstantiatedPrefab.transform.position = transforms[Random.Range(0, transforms.Length)].position + OffsetVector;
                 randomRotation = new Vector3(90, Random.Range(0, 90), Random.Range(0, 90));
                 InstantiatedPrefab.transform.Rotate(randomRotation);
-                Timer = Random.Range(minSpawnTime, maxSpawnTime);
+                Timer = 4f;
             }
     }
 }

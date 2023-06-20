@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int playerHealth;
+    public static int playerHealth;
     public int currencyAmount;
     public Text healthText;
     public Text currencyText;
@@ -19,12 +19,12 @@ public class PlayerStats : MonoBehaviour
     public GameObject gunObject;
     public bool canSprint = false;
     public GameObject camera;
-    SkyboxRGB skyboxRGB;
+    static SkyboxRGB skyboxRGB;
 
     void Awake()
     {
         player = GameObject.Find("Player");
-        playerHealth = 100;
+        playerHealth = 500;
         currencyAmount = 0;
         skyboxRGB = camera.GetComponent<SkyboxRGB>();
         skyboxRGB.coloredSky = false;
@@ -81,21 +81,23 @@ public class PlayerStats : MonoBehaviour
             }
         }
 
+        if ((player.transform.position.y < -60) || (playerHealth <= 0))
+        {
+            Debug.Log("died lol");
+            Application.Quit();
+        }
 
     }
 
-    public void PlayerTakeDamage(int damage)
+    public void Die()
+    {
+        Debug.Log("died lol");
+        Application.Quit();
+    }
+    public static void PlayerTakeDamage(int damage)
     {
         playerHealth -= damage;
         skyboxRGB.coloredSky = true;
-        StartCoroutine(turnOffSky(5));
-        // URP camera effects
-    }
-
-    IEnumerator turnOffSky(float seconds)
-    {
-        yield return new WaitForSecondsRealtime(4);
-        skyboxRGB.coloredSky = false;
     }
 
     public void Regeneration()

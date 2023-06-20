@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7826443588214753548}
   - component: {fileID: 6571534087656539817}
   - component: {fileID: 8995430247737553507}
-  - component: {fileID: 3346059375714961670}
   - component: {fileID: 1287201220295509218}
   - component: {fileID: 3909353826222763474}
+  - component: {fileID: 6757085382045350017}
+  - component: {fileID: 3590775959541969129}
   m_Layer: 0
   m_Name: mushroomEnemy
   m_TagString: Untagged
@@ -86,20 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3346059375714961670
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7482392503624979382}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2534964839176971238, guid: c22405ba4928dae4cbfa6fcd5e9496e0, type: 3}
 --- !u!114 &1287201220295509218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +102,7 @@ MonoBehaviour:
   enemyHealth: 0
   nmAgent: {fileID: 0}
   player: {fileID: 0}
+  damageAmount: 10
 --- !u!195 &3909353826222763474
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -137,3 +125,30 @@ NavMeshAgent:
   m_BaseOffset: 0.039130405
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &6757085382045350017
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7482392503624979382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.05
+  m_Height: 0.05
+  m_Direction: 1
+  m_Center: {x: 0.0017159171, y: 0.000003695488, z: 0.022005998}
+--- !u!65 &3590775959541969129
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7482392503624979382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08166862, y: 0.07825342, z: 0.064012}
+  m_Center: {x: 0.0017159171, y: 0.000003695488, z: 0.022005998}
