@@ -9,12 +9,14 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent nmAgent;
     public GameObject player;
     public float damageAmount = 10f;
+    public BoxCollider boxCollider;
 
     void Awake()
     {
         enemyHealth = 25;
         nmAgent = GetComponent<NavMeshAgent>();
         player = GameObject.FindWithTag("Player");
+        boxCollider = player.GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -27,20 +29,11 @@ public class Enemy : MonoBehaviour
 
         nmAgent.destination = player.transform.position;
 
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        if (boxCollider.bounds.Contains(transform.position))
         {
-            Debug.Log("Collision with the player detected.");
+            PlayerStats.PlayerTakeDamage(1);
         }
-    }
 
-    private void DamagePlayer()
-    {
-        Debug.Log("b");
-        
     }
 
     public void TakeDamage(float damage)
