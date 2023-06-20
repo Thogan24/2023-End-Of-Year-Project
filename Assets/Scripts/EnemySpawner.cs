@@ -20,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
             if (Timer <= 0)
             {
                 GameObject InstantiatedPrefab = Instantiate(Prefabs[Random.Range(0, Prefabs.Length)]);
+                InstantiatedPrefab.transform.parent = GameObject.Find("GameObjects").transform;
                 InstantiatedPrefab.SetActive(true);
                 Vector3 OffsetVector = new Vector3(Random.Range(-OffsetX, OffsetX), Random.Range(-OffsetY, OffsetY), Random.Range(-OffsetZ, OffsetZ));
                 InstantiatedPrefab.transform.position = transforms[Random.Range(0, transforms.Length)].position + OffsetVector;

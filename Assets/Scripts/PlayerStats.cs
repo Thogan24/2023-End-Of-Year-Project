@@ -18,11 +18,15 @@ public class PlayerStats : MonoBehaviour
     public GameObject player;
     public GameObject gunObject;
     public bool canSprint = false;
+    public GameObject camera;
+    SkyboxRGB skyboxRGB;
 
     void Awake()
     {
         playerHealth = 100;
         currencyAmount = 0;
+        skyboxRGB = camera.GetComponent<SkyboxRGB>();
+        skyboxRGB.coloredSky = false;
     }
 
 
@@ -82,7 +86,15 @@ public class PlayerStats : MonoBehaviour
     public void PlayerTakeDamage(int damage)
     {
         playerHealth -= damage;
+        skyboxRGB.coloredSky = true;
+        StartCoroutine(turnOffSky(5));
         // URP camera effects
+    }
+
+    IEnumerator turnOffSky(float seconds)
+    {
+        yield return new WaitForSecondsRealtime(4);
+        skyboxRGB.coloredSky = false;
     }
 
     public void Regeneration()
